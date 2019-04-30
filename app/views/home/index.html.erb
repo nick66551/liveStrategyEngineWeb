@@ -1,0 +1,20 @@
+<div class="container">
+    <h3>搬磚程式 Portal</h3>
+    <div class="bg-secondary">
+        <div class="message">
+            <%= @messages %>
+        </div>
+        <button class="btn-primary" id="start-service">開始啟用服務</button>
+    </div>
+</div>
+<script>
+$("#start-service").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "/start_service",
+        success: function(res){
+            console.log(res)
+        }
+    })
+})
+</script>
